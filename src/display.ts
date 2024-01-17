@@ -1,10 +1,12 @@
 import CLI from 'clui';
 import clc from 'cli-color';
+import type { Board } from './models/board.model.ts';
+import type { Player } from './models/player.model.ts';
 
 const { LineBuffer, Line } = CLI;
 const playerColors = [clc.white, clc.red, clc.blue];
 
-export const displayBoard = (board) => {
+export const displayBoard = (board: Board) => {
   const outputBuffer = new LineBuffer({
     x: 0,
     y: 0,
@@ -25,7 +27,7 @@ export const displayBoard = (board) => {
   outputBuffer.output();
 }
 
-export const displayWinner = (winner) => {
+export const displayWinner = (winner: Player) => {
   const outputBuffer = new LineBuffer({
     x: 0,
     y: 0,
